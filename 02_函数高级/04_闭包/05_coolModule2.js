@@ -2,19 +2,17 @@
  * 自定义模块2
  */
 (function (window) {
-  //私有的数据
-  var msg = 'atguigu'
-  var names = ['I', 'Love', 'you']
+  var msg = 'My atguigu'
   //操作数据的函数
-  function a() {
-    console.log(msg.toUpperCase())
+  function doSomething() {
+    console.log('doSomething ' + msg.toUpperCase());
   }
-  function b() {
-    console.log(names.join(' '))
+  function doOtherthing() {
+    console.log('doOtherthing ' + msg.toLowerCase());
   }
-
-  window.coolModule2 =  {
-    doSomething: a,
-    doOtherthing: b
+  //向外暴露
+  window.myModule2 = {
+    doSomething,
+    doOtherthing
   }
-})(window)
+})(window)//方便代码打包压缩
